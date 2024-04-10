@@ -1,0 +1,257 @@
+html{
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #1b6e3b;
+  background-image: linear-gradient(180deg, #1b6e3b 0%, #219633 50%, #1b6e3b 100%);
+  color: #ffffff;
+}
+h1{
+  font-family: 'Adobe Jenson', serif;
+  text-align: center;
+  position: absolute;
+  top: 2em;
+  left: 1.4em;
+  /*font-size: 60px*/
+}
+h2{
+font-family: 'Adobe Jenson', serif;
+text-align: center;
+position: absolute;
+bottom: 30em;
+right: 4em;
+/*font-size: 60px*/
+}
+h3{
+font-family: 'Adobe Jenson', serif;
+text-align: center;
+position: absolute;
+bottom: 29em;
+right: 4em;
+/*font-size: 60px*/
+}
+#map {
+  height: 90vh;
+  width: 70%;
+  }
+
+  header{
+      border-bottom: 1px solid #E2E8F0;
+  }
+.custom-map-control-button {
+background-color: #fff;
+border: 0;
+border-radius: 2px;
+box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+margin: 10px;
+padding: 0 0.5em;
+font: 400 18px Roboto, Arial, sans-serif;
+overflow: hidden;
+height: 40px;
+cursor: pointer;
+}
+.custom-map-control-button:hover {
+background: rgb(235, 235, 235);
+}
+/*copying sams header*/
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #1b6e3b; 
+color: white;
+}
+
+.brand-title {
+font-size: 4vw;
+margin: 0.5vw;
+}
+
+.navbar-links ul {
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+.navbar-links li    {
+list-style: none;
+}
+
+.navbar-links li a  {
+text-decoration: none;
+color: white;
+padding: 1rem;
+display: block;
+}
+
+.navbar-links li:hover   {
+background-color: #555;
+}
+
+.toggle-button {
+position: absolute; /* This makes it so that position doesn't change no matter what */
+top: .4rem; /* gives space from the top */
+right: 1rem; /* gives space from the right */
+display: none; /* if we want to only show it while it while minimized, set this as none */
+flex-direction: column; /* Shows spans vertically */
+justify-content: space-between; /* leaves enough space between spans */
+width: 20px;
+height: 4vw;
+}
+
+.toggle-button .bar {
+height: 2.5px;
+width: 100%;
+background-color: white;
+border-radius: 10px;
+}
+
+/* we will use a Media Query. This makes it so that when a condition is met, then something will execute.
+*/
+
+@media (max-width: 600px)   {
+.toggle-button {
+    display: flex;
+}
+
+.navbar-links {
+    display: none;
+    width: 100%;
+}
+
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar-links ul {
+    width: 100px;
+    flex-direction: column;
+}
+
+.navbar-links li {
+    text-align: center;
+}
+
+.navbar-links li a {
+    padding: .5rem 1rem;
+}
+
+.navbar-links.active {
+    display: flex;
+}
+}
+.gm-style-iw-d {
+  color: #000000;
+}
+
+/*////////////////////////////START OF POP UP////////////////////////////*/
+/* Your existing CSS styles */
+
+/* Additional styles for the popup */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+  color: #000;
+  z-index: 1001;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4bb544;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007f67;
+}
+
+/*FOR LOADING CIRCLE*/
+/* Define the loading-circle class */
+.loading-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-top: 2px solid #00853E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Create a keyframes animation for the spinning effect */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*TABLE CSS*/
+.tablefin{
+  overflow-y: auto; 
+  height: 26.25em; 
+  margin-top: -40%; 
+  margin-right: 5%;
+  text-align: center;
+  float: right;
+}
+.tablefin th, .tablefin td {
+  border: 0.0625em solid white;
+  padding: 0.3125em;
+  font-size: 1.5em;
+}
+
+.tablefin tbody {
+  text-align: center;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 600px) {
+  .tablefin{
+    float: right;
+    width: 7.5em;
+    margin-right: -2%;
+    height: 15em; 
+    margin-top: -100%; 
+    overflow-y: scroll;
+  }
+  .tablefin th, .tablefin td {
+    font-size: 0.3em;
+    min-width: 0.3em;
+    width: 0.5em;
+    border: 0.0625em solid white;
+    padding: 0.3125em;
+  }
+  tbody {
+    text-align: center;
+    overflow-y: scroll;
+  }
+}
